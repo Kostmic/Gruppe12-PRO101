@@ -3,14 +3,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById("calendar");
   var calendar = new FullCalendar.Calendar(calendarEl, {
-    plugins: ["dayGrid", "timeGrid", "list"],
-    defaultView: 'timeGridWeek',
+    plugins: ["dayGrid"],
     customButtons: {
     reload: {
         text: '+',
         click: function() {
-        var userInput = prompt("how are you?");   //this is just a test
-        return userInput;
+          document.getElementById("myForm").style.display = "block";
         }
     }
 },
@@ -18,26 +16,26 @@ header: {
     left: 'prev,next today',
     center: 'title',
     right: 'reload'
-}
-//     customButtons: {
-//       myCustomButton: {
-//         text: 'custom!',
-//         click: function() {
-//           alert("you clicked me")
-//         }
-//       }
-//     events: [{
-//     title: 'simple event',
-//     start: '2019-05-02',
-//   },
-//   {
-//     title: 'event with URL',
-//     url: 'https://www.google.com/',
-//     start: '2019-05-03'
-//   }
-// ]
+},
+     events: function(title, start, room){
+       title = titleinput;
+       start = startinput;
+       room = roominput;
+     }
    });
 
   calendar.render();
  });
-console.log(calendar.reload.click);
+
+ function openForm() {
+   document.getElementById("myForm").style.display = "block";
+ }
+
+ function closeForm() {
+   document.getElementById("myForm").style.display = "none";
+ }
+console.log(userTitle)
+
+var titleinput = document.getElementById("userTitle");
+var startinput = document.getElementById("userStart");
+var roominput = document.getElementById("userRoom")
