@@ -1,41 +1,57 @@
-
-
 document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById("calendar");
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    plugins: ["dayGrid"],
+  var calendarEl = document.getElementById('calendar');
+
+  calendar = new FullCalendar.Calendar(calendarEl, {
+    plugins: ['dayGrid', 'interaction'],
+    editable: true,
+    defaultView: 'dayGridMonth',
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'addEvent'
+    },
     customButtons: {
-    reload: {
+      addEvent: {
         text: '+',
+
         click: function() {
           document.getElementById("myForm").style.display = "block";
         }
+      }
     }
-},
-header: {
-    left: 'prev,next today',
-    center: 'title',
-    right: 'reload'
-},
-     events: function(title, start, room){
-       title = titleinput;
-       start = startinput;
-       room = roominput;
-     }
-   });
+  });
 
   calendar.render();
- });
+});
 
- function openForm() {
-   document.getElementById("myForm").style.display = "block";
- }
+window.onload = function() {
+  var loginBtn = document.getElementById("loginBtn");
+  loginBtn.addEventListener("click", assignEvent);
+}
 
- function closeForm() {
-   document.getElementById("myForm").style.display = "none";
- }
-console.log(userTitle)
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
 
-var titleinput = document.getElementById("userTitle");
-var startinput = document.getElementById("userStart");
-var roominput = document.getElementById("userRoom")
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+function getTitle() {
+  return document.getElementById("userTitle").value;
+}
+
+function getDate() {
+  return document.getElementById("userStart").value;
+}
+
+function getRoom() {
+  return document.getElementById("userRoom").value;
+}
+
+function assignEvent() {
+  calendar.addEvent({
+    title: getTitle() + "\n"+ "Room: " + getRoom(),
+    start: getDate(),
+  });
+};

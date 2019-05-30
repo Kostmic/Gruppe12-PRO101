@@ -1,0 +1,113 @@
+.loader,
+.loader:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+.loader {
+    font-size: 10px;
+    text-indent: -9999em;
+    border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-left: 1.1em solid black;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+    z-index: 2;
+    position: absolute;
+    margin-top: 8%;
+    margin-left: 43%;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+#login-header {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.6;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 12%;
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
+}
+
+.login-box {
+    max-width: 450px;
+    border-radius: 25px;
+    box-shadow: -1px 3px 12px -6px #000000;
+    margin-top: 25px;
+    background: white;
+}
+
+.inputFields {
+    margin-left: 25px;
+    padding-right: 25px;
+}
+.inputFields input {
+    border-radius: 7px;
+    padding-left: 3px;
+    padding-right: 3px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: -1px 3px 10px -6px #000000;
+}
+
+#button {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: black; 
+    margin: 1em auto;
+    margin-left: 38.9%;
+    opacity: 0.5;
+}
+
+
+label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
