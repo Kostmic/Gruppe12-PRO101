@@ -34,7 +34,6 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     box-shadow: -1px 3px 10px -6px #000000;
-    
 }
 
 #button {
@@ -51,6 +50,10 @@
     opacity: 0.5;
 }
 
+#button:hover {
+    color: white;
+    background: black;
+}
 
 label {
     font-family: 'Montserrat', sans-serif;

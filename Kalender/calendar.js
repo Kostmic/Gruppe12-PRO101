@@ -5,17 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
     plugins: ['dayGrid', 'interaction'],
     editable: true,
     defaultView: 'dayGridMonth',
+    displayEventTime: false,
     header: {
-      left: 'prev,next today',
+      left: 'prev, next today',
       center: 'title',
       right: 'addEvent'
     },
     customButtons: {
       addEvent: {
         text: '+',
-
         click: function() {
-          document.getElementById("myForm").style.display = "block";
+          toggleForm("block");
         }
       }
     }
@@ -29,29 +29,25 @@ window.onload = function() {
   loginBtn.addEventListener("click", assignEvent);
 }
 
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
+function toggleForm(state) {
+  document.getElementById("myForm").style.display = state;
 }
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-
-function getTitle() {
-  return document.getElementById("userTitle").value;
-}
-
-function getDate() {
-  return document.getElementById("userStart").value;
-}
-
-function getRoom() {
-  return document.getElementById("userRoom").value;
+function getInput(type) {
+  return document.getElementById("user" + type).value;
 }
 
 function assignEvent() {
-  calendar.addEvent({
-    title: getTitle() + "\n"+ "Room: " + getRoom(),
-    start: getDate(),
-  });
+  inputTitle = getInput("Title");
+  inputDate = new Date((getInput("Date")) + 'T00:00:00');
+  inputRoom = getInput("Room");
+
+  if (!isNaN(inputDate.valueOf())) {
+    calendar.addEvent({
+      title: inputTitle + "\n" + "Room: " + inputRoom,
+      start: inputDate
+    });
+  } else {
+    alert("Invalid date. Format is YYYY-MM-DD.");
+  }
 };
