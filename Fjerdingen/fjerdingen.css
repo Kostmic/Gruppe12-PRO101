@@ -1,0 +1,53 @@
+li{
+  border-style: solid;
+  border-color: black;
+  display:inline;
+  padding-right: 10px;
+}
+
+.button-box{
+  display: table;
+  position: absolute;
+  left: 40%;
+}
+
+img{
+  height: 300px;
+  width: 400px
+}
+
+.map-box{
+  position: relative;
+  margin: auto;
+  width: 50%;
+  top: 100px;
+  left: 100px;
+}
+
+.imgu1{
+  position: absolute;
+  visibility: hidden;
+}
+
+.img1{
+  position: absolute;
+}
+
+.img2{
+  position: absolute;
+  visibility: hidden;
+}
+
+.img3{
+  position: absolute;
+  visibility: hidden;
+}
+.img4{
+  position: absolute;
+  visibility: hidden;
+}
+
+.img5{
+  position: absolute;
+  visibility: hidden;
+}
