@@ -1,6 +1,14 @@
 li{
   border-style: solid;
   border-color: black;
+  display:inline;
+  padding-right: 10px;
+}
+
+.button-box{
+  display: table;
+  position: absolute;
+  left: 40%;
 }
 
 img{
@@ -12,21 +20,17 @@ img{
   position: relative;
   margin: auto;
   width: 50%;
-  border-style: solid;
-  border-color: black;
-  top: 0;
-  left: 0;
+  top: 100px;
+  left: 100px;
 }
 
 .imgu1{
   position: absolute;
-  top: 0;
-  left: 0;
   visibility: hidden;
 }
 
 .img1{
-  position: absolute;  
+  position: absolute;
 }
 
 .img2{
