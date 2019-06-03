@@ -1,53 +1,41 @@
-li{
-  border-style: solid;
-  border-color: black;
-  display:inline;
-  padding-right: 10px;
+.button-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
 }
 
-.button-box{
-  display: table;
-  position: absolute;
-  left: 40%;
+.map-box {
+  max-width: 855px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 1%;
 }
 
-img{
-  height: 300px;
-  width: 400px
+.map-box img {
+  height: 100%;
+  width: 100%;
 }
 
-.map-box{
-  position: relative;
-  margin: auto;
-  width: 50%;
-  top: 100px;
-  left: 100px;
-}
-
-.imgu1{
-  position: absolute;
+.map-box img:not(.img1) {
   visibility: hidden;
 }
 
-.img1{
-  position: absolute;
+.button-box button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid black;
+  border-radius: 20px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  transition: all 0.4s;
+  opacity: 0.7;
 }
 
-.img2{
-  position: absolute;
-  visibility: hidden;
-}
-
-.img3{
-  position: absolute;
-  visibility: hidden;
-}
-.img4{
-  position: absolute;
-  visibility: hidden;
-}
-
-.img5{
-  position: absolute;
-  visibility: hidden;
+.button-box button:hover {
+  color: white;
+  background: black;
 }
