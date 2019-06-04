@@ -1,10 +1,16 @@
-// Select the elements
-const toDoList = document.getElementById("toDoList");
+// Variables for the different div containers
 const toDoItems = document.getElementById("toDo");
 const doing = document.getElementById("doing");
 const doneItems = document.getElementById("done");
+
+// Variable for the user input & all the containers
 const input = document.getElementById("input");
 const containers = document.querySelectorAll(".container");
+
+// Variables for the different lists
+const toDoList = document.getElementById("toDoList");
+const doingList = document.getElementById("doingList");
+const doneList = document.getElementById("doneList");
 
 for(const container of containers) {
     container.addEventListener("dragover", dragOver);
@@ -82,9 +88,9 @@ function removeToDo(element) {
 
 // Target the items created dynamically
 
-toDoItems.addEventListener("click", function(event) {
-    const element = event.target; // Retrun the clicked element inside list
-    const elementJob = element.attributes.job.value; // Dßelete
+toDoItems.addEventListener("click", function(event){
+    const element = event.target; // Return the clicked element inside list
+    const elementJob = element.attributes.job.value; // Delete
     
     if (elementJob == "delete"){
         removeToDo(element);
@@ -94,9 +100,9 @@ toDoItems.addEventListener("click", function(event) {
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
 
-doing.addEventListener("click", function(event) {
-    const element = event.target; // Retrun the clicked element inside list
-    const elementJob = element.attributes.job.value; // Dßelete
+doing.addEventListener("click", function(event){
+    const element = event.target; // Return the clicked element inside list
+    const elementJob = element.attributes.job.value; // Delete
     
     if (elementJob == "delete"){
         removeToDo(element);
@@ -106,9 +112,9 @@ doing.addEventListener("click", function(event) {
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
 
-doneItems.addEventListener("click", function(event) {
-    const element = event.target; // Retrun the clicked element inside list
-    const elementJob = element.attributes.job.value; // Dßelete
+doneItems.addEventListener("click", function(event){
+    const element = event.target; // Return the clicked element inside list
+    const elementJob = element.attributes.job.value; // Delete
     
     if (elementJob == "delete") {
         removeToDo(element);
@@ -131,6 +137,10 @@ function dragEnd() {
     item.className = "item";
 }
 
+toDoList.addEventListener("dragstart", function(event){
+    dragStart();
+})
+   
 toDoList.addEventListener("dragstart", function(event) {
     const item = event.target;
     
@@ -149,14 +159,24 @@ function dragOver(e) {
 
 function dragEnter(e) {
     e.preventDefault();
+    return currentContainer = this.id;
 }
 
 function dragLeave() {
     
 }
 
+let currentContainer;
+
 function dragDrop() {
     currentItem.className = "item";
-    console.log(this.id);
-    this.append(currentItem);
+    if(currentContainer == "doing"){
+        doingList.append(currentItem);
+    }
+    if(currentContainer == "done"){
+        doneList.append(currentItem);
+    }
+    if(currentContainer == "toDo"){
+        toDoList.append(currentItem);
+    }
 }

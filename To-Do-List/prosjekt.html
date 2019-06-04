@@ -2,14 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Javascript - To Do List</title>
+        <title>Prosjekt</title>
         <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../To-Do-List/css/font-awesome.css">
         <link rel="stylesheet" href="../To-Do-List/css/style.css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-compatible" content="ie=edge">
         <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../Forside/style.css">
         <link rel="stylesheet" href="../common.css">
     </head>
     <body>
@@ -19,7 +18,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="../Forside/index.html">Hjem</a></li>
-                <li><a id="currentPage" href="../To-Do-List/prosjekt.html">Prosjekt</a></li>
+                <li><a style="text-decoration: underline;" href="../To-Do-List/prosjekt.html">Prosjekt</a></li>
                 <li><a href="../Kalender/calendar.html">Kalender</a></li>
                 <li><a href="../Fjerdingen/fjerdingen.html">Fjerdingen</a></li>
                 <li><a href="../Om oss/omOss.html">Om oss</a></li>
@@ -30,52 +29,54 @@
                 <div class="line3"></div>
             </div>
         </nav>
-        <!--    To do list  -->
-        <div class="container" id="toDo">
-            <!--    Header  -->
-            <div class="header">
-                <div id="header">
-                    <h1>To-do</h1>
+        <main>
+            <!--    To do list  -->
+            <div class="container" id="toDo">
+                <!--    Header  -->
+                <div class="header">
+                    <div id="header">
+                        <h1>To-do</h1>
+                    </div>
+                </div>
+                <!--    Todo-list body  -->
+                <div class="content" id="toDoList"> 
+                    
+                </div>
+                <div class="add-to-do">
+                    <i class="fa fa-plus-circle"></i>
+                    <input type="text" id="input" placeholder="Add item to card">
                 </div>
             </div>
-            <!--    Todo-list body  -->
-            <div class="content" id="toDoList"> 
-                
-            </div>
-            <div class="add-to-do">
-                <i class="fa fa-plus-circle"></i>
-                <input type="text" id="input" placeholder="Add item to card">
-            </div>
-        </div>
 
-        <!--    Doing list  -->
-        <div class="container" id="doing">
-            <!--    Header  -->
-            <div class="header">
-                <div id="header">
-                    <h1>Doing</h1>
+            <!--    Doing list  -->
+            <div class="container" id="doing">
+                <!--    Header  -->
+                <div class="header">
+                    <div id="header">
+                        <h1>Doing</h1>
+                    </div>
                 </div>
+                <!--    Doing-list body  -->
+                <div class="content" id="doingList">               
+                </div>            
             </div>
-            <!--    Doing-list body  -->
-            <div class="content" id="doingList">               
-            </div>            
-        </div>
 
-            <!--    Done list  -->
-        <div class="container" id="done">
-            <!--    Header  -->
-            <div class="header">
-                <div id="header">
-                    <h1>Done</h1>
+                <!--    Done list  -->
+            <div class="container" id="done">
+                <!--    Header  -->
+                <div class="header">
+                    <div id="header">
+                        <h1>Done</h1>
+                    </div>
+                </div>
+                <!--    Done-list body  -->
+                <div class="content" id="doneList">    
                 </div>
             </div>
-            <!--    Done-list body  -->
-            <div class="content" id="doneList">    
-            </div>
-        </div>
+        </main>
 
         <!--    Link to script  -->
         <script src="../To-Do-List/js/app.js"></script>
-        <script src="../Forside/app.js"></script>
+        <script src="../common.js"></script>
     </body>
 </html>
