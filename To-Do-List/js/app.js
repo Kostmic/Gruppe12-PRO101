@@ -6,7 +6,7 @@ const doneItems = document.getElementById("done");
 const input = document.getElementById("input");
 const containers = document.querySelectorAll(".container");
 
-for(const container of containers){
+for(const container of containers) {
     container.addEventListener("dragover", dragOver);
     container.addEventListener("dragenter", dragEnter);
     container.addEventListener("dragleave", dragLeave);
@@ -20,27 +20,27 @@ let LIST, id;
 let data = localStorage.getItem("TODO");
 
 // Check if data is not empty
-if(data){
+if (data) {
     LIST = JSON.parse(data);
     id = LIST.length; // Set the id to the last one in the list
     loadList(LIST); // Load the list to the user interface
-} else{
+} else {
     // If data is empty
     LIST = [];
     id = 0;
 };
 
 // Load items to the user's interface
-function loadList(array){
-    array.forEach(function(item){
+function loadList(array) {
+    array.forEach(function(item) {
         addToDo(item.name, item.id, item.trash);
     });
 };
 
 // Adding to-do function
-function addToDo(toDo, id, trash){
+function addToDo(toDo, id, trash) {
     
-    if(trash){ return; }
+    if (trash) { return; }
 
     const item = '<div class="item" draggable="true" id="' + id + '"><p class="text">'+ toDo +'</p><i class="fa fa-trash-o de" job="delete" id="'+ id +'"></i></div>';
 
@@ -51,10 +51,10 @@ function addToDo(toDo, id, trash){
 };
 
 input.addEventListener("keyup", event => {
-    if(event.keyCode == 13){
+    if (event.keyCode == 13){
         const toDo = input.value;
         // Check if input is empty
-        if(toDo){
+        if (toDo) {
             addToDo(toDo, id, false);
 
             LIST.push({
@@ -74,7 +74,7 @@ input.addEventListener("keyup", event => {
 });
 
 // Remove to do
-function removeToDo(element){
+function removeToDo(element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
 
     LIST[element.id].trash = true;
@@ -82,11 +82,11 @@ function removeToDo(element){
 
 // Target the items created dynamically
 
-toDoItems.addEventListener("click", function(event){
+toDoItems.addEventListener("click", function(event) {
     const element = event.target; // Retrun the clicked element inside list
     const elementJob = element.attributes.job.value; // Dßelete
     
-    if(elementJob == "delete"){
+    if (elementJob == "delete"){
         removeToDo(element);
     }
 
@@ -94,11 +94,11 @@ toDoItems.addEventListener("click", function(event){
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
 
-doing.addEventListener("click", function(event){
+doing.addEventListener("click", function(event) {
     const element = event.target; // Retrun the clicked element inside list
     const elementJob = element.attributes.job.value; // Dßelete
     
-    if(elementJob == "delete"){
+    if (elementJob == "delete"){
         removeToDo(element);
     }
 
@@ -106,11 +106,11 @@ doing.addEventListener("click", function(event){
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
 
-doneItems.addEventListener("click", function(event){
+doneItems.addEventListener("click", function(event) {
     const element = event.target; // Retrun the clicked element inside list
     const elementJob = element.attributes.job.value; // Dßelete
     
-    if(elementJob == "delete"){
+    if (elementJob == "delete") {
         removeToDo(element);
     }
 
@@ -131,13 +131,13 @@ function dragEnd() {
     item.className = "item";
 }
 
-toDoList.addEventListener("dragstart", function(event){
+toDoList.addEventListener("dragstart", function(event) {
     const item = event.target;
     
     dragStart();
 })
 
-toDoList.addEventListener("dragend", function(event){
+toDoList.addEventListener("dragend", function(event) {
     const item = event.target;
     
     dragEnd();
