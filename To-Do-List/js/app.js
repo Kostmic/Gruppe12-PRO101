@@ -83,8 +83,8 @@ function removeToDo(element){
 // Target the items created dynamically
 
 toDoItems.addEventListener("click", function(event){
-    const element = event.target; // Retrun the clicked element inside list
-    const elementJob = element.attributes.job.value; // Dßelete
+    const element = event.target; // Return the clicked element inside list
+    const elementJob = element.attributes.job.value; // Delete
     
     if(elementJob == "delete"){
         removeToDo(element);
@@ -95,8 +95,8 @@ toDoItems.addEventListener("click", function(event){
 });
 
 doing.addEventListener("click", function(event){
-    const element = event.target; // Retrun the clicked element inside list
-    const elementJob = element.attributes.job.value; // Dßelete
+    const element = event.target; // Return the clicked element inside list
+    const elementJob = element.attributes.job.value; // Delete
     
     if(elementJob == "delete"){
         removeToDo(element);
@@ -107,8 +107,8 @@ doing.addEventListener("click", function(event){
 });
 
 doneItems.addEventListener("click", function(event){
-    const element = event.target; // Retrun the clicked element inside list
-    const elementJob = element.attributes.job.value; // Dßelete
+    const element = event.target; // Return the clicked element inside list
+    const elementJob = element.attributes.job.value; // Delete
     
     if(elementJob == "delete"){
         removeToDo(element);
@@ -132,14 +132,10 @@ function dragEnd() {
 }
 
 toDoList.addEventListener("dragstart", function(event){
-    const item = event.target;
-    
     dragStart();
 })
 
-toDoList.addEventListener("dragend", function(event){
-    const item = event.target;
-    
+toDoList.addEventListener("dragend", function(event){   
     dragEnd();
 })
 
@@ -157,6 +153,5 @@ function dragLeave() {
 
 function dragDrop() {
     currentItem.className = "item";
-    console.log(this.id);
     this.append(currentItem);
 }
