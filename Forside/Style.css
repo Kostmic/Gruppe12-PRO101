@@ -1,0 +1,19 @@
+.howBox{
+  position: relative;
+  align-self: center;
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  margin-left: 10px;
+}
+
+
+#howBoxes{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content:center;
+}
+
+img{
+
+}
