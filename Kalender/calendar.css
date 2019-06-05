@@ -52,7 +52,7 @@
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #4CAF50;
+  background-color: #5D4954;
   color: white;
   padding: 16px 20px;
   border: none;
@@ -140,7 +140,7 @@ nav {
 
 @media screen and (max-width:768px) {
   body {
-      overflow-x: hidden; 
+      overflow-x: hidden;
   }
   .nav-links {
       position: absolute;
