@@ -1,30 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="fjerdingen.css">
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div class="mapcontainer">
-      <div class="button-box">
-        <ul>
-          <li><a href="#">u1<a></li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-        </ul>
-      </div>
-      <div class="map-box">
-        <img src="pictures/Fjerdingen-u1.png" class="imgu1">
-        <img src="pictures/Fjerdingen-1.png" class="img1">
-        <img src="pictures/Fjerdingen-2.png" class="img2">
-        <img src="pictures/Fjerdingen-3.png" class="img3">
-        <img src="pictures/Fjerdingen-4.png" class="img4">
-        <img src="pictures/Fjerdingen-5.png" class="img5">
+
+<head>
+  <link rel="stylesheet" href="fjerdingen.css">
+  <link rel="stylesheet" href="..\common.css">
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">
+      <h4>The Nav</h4>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../Forside/index.html">Hjem</a></li>
+      <li><a href="../To-Do-List/prosjekt.html">Prosjekt</a></li>
+      <li><a href="../Kalender/calendar.html">Kalender</a></li>
+      <li><a id="currentPage" href="#">Fjerdingen</a></li>
+      <li><a href="../Om oss/omOss.html">Om oss</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+  <script src="..\common.js"></script>
+
+  <div class="mainContainer">
+    <div class="button-box">
+      <button type="button" onclick="changeFloor('pictures/Fjerdingen-u1.png', 'U1')">U1</button>
+      <button type="button" onclick="changeFloor('pictures/Fjerdingen-1.png', 'F1')">1</button>
+      <button type="button" onclick="changeFloor('pictures/Fjerdingen-2.png', 'F2')">2</button>
+      <button type="button" onclick="changeFloor('pictures/Fjerdingen-3.png', 'F3')">3</button>
+      <button type="button" onclick="changeFloor('pictures/Fjerdingen-4.png', 'F4')">4</button>
+      <button type="button" onclick="changeFloor('pictures/Fjerdingen-5.png', 'F5')">5</button>
+    </div>
+    <div class="map-box">
+      <img src="pictures/Fjerdingen-1.png" class="img1" id="initImage">
+      <div id="floors">
+        <div id="U1">
+          <h2 id="U101">U101</h2> 
+          <h2 id="U102">U102</h2>
+          <h2 id="U103">U103</h2>
+          <h2 id="U104">U104</h2>
+          <h2 id="U105">U105</h2>
+          <h2 id="U106">U106</h2>
+        </div>
+        <div id="F1">
+          <h2 id="Forelesningssal">Forelesningssal</h2> 
+          <h2 id="Bibliotek">Bibliotek</h2>
+          <h2 id="Kantine">Kantine</h2>
+        </div>
+        <div id="F2">
+          <h2 id="F201">201</h2> 
+          <h2 id="F202">202</h2>
+          <h2 id="F203">203</h2>
+          <h2 id="F204">204</h2>
+          <h2 id="F205">205</h2>
+          <h2 id="F206">206</h2>
+        </div>
+        <div id="F3">
+          <h2 id="F301">301</h2> 
+          <h2 id="F302">302</h2>
+          <h2 id="F303">303</h2>
+          <h2 id="F304">304</h2>
+          <h2 id="F305">305</h2>
+          <h2 id="F306">306</h2>
+        </div>
+        <div id="F4">
+          <h2 id="F401">401</h2> 
+          <h2 id="F402">402</h2>
+          <h2 id="F403">403</h2>
+          <h2 id="F404">404</h2>
+          <h2 id="F405">405</h2>
+          <h2 id="F406">406</h2>
+        </div>
+        <div id="F5">
+          <h2 id="F501">Lesesal</h2> 
+        </div>
       </div>
     </div>
-  </body>
+    
+  </div>
+  <script src='fjerdingen.js'></script>
+</body>
+
 </html>

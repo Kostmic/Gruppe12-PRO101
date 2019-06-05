@@ -1,13 +1,17 @@
 /* ------------ youtube.com/CodeExplained ------------ */
-body{
+body {
     padding: 0;
     margin: 0;
     background-color: rgba(0,0,0,0.1);
     font-family: 'Titillium Web', sans-serif;
 }
 
+main {
+    text-align: center;
+}
+
 /* ------------ container ------------ */
-.container{
+.container {
     padding:10px;
     width:380px;
     margin:0 auto;
@@ -15,30 +19,15 @@ body{
 }
 
 /* ------------ header ------------ */
-.header{
+.header {
     width: 380px;
     height:75px;
     border-radius: 15px 15px 0 0;
     position: relative;
     background-color: #FFF;
 }
-.clear{
-    width : 30px;
-    height: 30px;
-    position: absolute;
-    right:20px;
-    top: 20px;
-}
-.clear i{
-    font-size: 30px;
-    color: #FFF;
-}
-.clear i:hover{
-    cursor: pointer;
-    text-shadow: 1px 3px 5px #000;
-    transform: rotate(45deg);
-}
-#header{
+
+#header {
     position: absolute;
     top: 5px;
     left: 20px;
@@ -47,44 +36,45 @@ body{
     font-family: 'Titillium Web', sans-serif;
     display: inline-block;
 }
-h1{
+h1 {
     padding: 0;
     margin: 0;
 }
 
 /* ------------ content ------------ */
-.content{
+.content {
     width:380px;
     height: 350px;
     max-height:350px;
     background-color: #FFF;
     overflow: auto;
-}
-.content::-webkit-scrollbar { 
-    display: none; 
+    overflow-x: hidden;
 }
 
-.item{
+.item {
     width:380px;
     min-height: 45px;
     position: relative;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    list-style: none;
     padding: 0;
     margin: 0;
+    cursor: grab; 
+    cursor: move; /* In case grab is unsupported */
+    cursor: moz-grab;
+    cursor: -webkit-grab;
 }
-.item i.co{
+.item i.co {
     position: absolute;
     font-size: 25px;
     padding-left:5px;
     left:15px;
     top:10px;
 }
-.item i.co:hover{
+.item i.co:hover {
     cursor: pointer;
 }
 
-.item p.text{
+.item p.text {
     position: absolute;
     padding:0;
     margin:0;
@@ -95,32 +85,33 @@ h1{
     max-width:285px;
 }
 
-.item i.de{
+.item i.de {
     position: absolute;
     font-size: 25px;
-    right:15px;
+    right:25px;
     top:10px;
 }
-.item i.de:hover{
+.item i.de:hover {
     color:#af0000;
     cursor: pointer;
 }
 /* ------------ add item ------------ */
-.add-to-do{
+.add-to-do {
     position: relative;
-    width: 360px;
-    height:40px;
+    width: 380px;
+    height:60px;
     background-color: #FFF;
     padding: 10px;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
-.add-to-do i{
+.add-to-do i {
     position: absolute;
+    left: 10px;
     font-size: 40px;
     color: #4162f6;
 }
 
-.add-to-do input{
+.add-to-do input {
     position: absolute;
     left: 50px;
     height: 35px;
@@ -154,9 +145,4 @@ h1{
 /* ------------ Drag & Drop ------------ */
 .invisible {
     display: none;
-}
-
-.hovered {
-    background: #f4f4f4;
-    border-style: dashed;
 }

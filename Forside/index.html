@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <link rel="stylesheet" href="Style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../common.css">
     <title>NAVIGATOn</title>
 </head>
 
@@ -15,8 +16,8 @@
             <h4>The Nav</h4>
         </div>
         <ul class="nav-links">
-            <li><a id="currentPage" href="#">Hjem</a></li>
-            <li><a href="../Prosjekt/prosjekt.html">Prosjekt</a></li>
+            <li><a style="text-decoration: underline;" href="#">Hjem</a></li>
+            <li><a href="../To-Do-List/prosjekt.html">Prosjekt</a></li>
             <li><a href="../Kalender/calendar.html">Kalender</a></li>
             <li><a href="../Fjerdingen/fjerdingen.html">Fjerdingen</a></li>
             <li><a href="../Om oss/omOss.html">Om oss</a></li>
@@ -28,7 +29,13 @@
         </div>
     </nav>
 
-    <script src="app.js"></script>
+    <script src="../common.js"></script>
+
+    <div id="howBoxes">
+  <div class="howBox"><img src="../fjerdingen/Pictures/Fjerdingen-1.png" height="42" width="42">Opprett en event</div>
+  <div class="howBox">Legg til event i kalenderen</div>
+  <div class="howBox">Sjekk hvilke rom som er ledige</div>
+</div>
 </body>
 
 </html>

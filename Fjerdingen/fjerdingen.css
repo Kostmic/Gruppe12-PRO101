@@ -1,53 +1,223 @@
-li{
-  border-style: solid;
-  border-color: black;
-  display:inline;
-  padding-right: 10px;
+.button-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
 }
 
-.button-box{
-  display: table;
-  position: absolute;
-  left: 40%;
-}
-
-img{
-  height: 300px;
-  width: 400px
-}
-
-.map-box{
+.map-box:not(h2) {
+  max-width: 855px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 1%;
   position: relative;
-  margin: auto;
-  width: 50%;
-  top: 100px;
-  left: 100px;
 }
 
-.imgu1{
-  position: absolute;
-  visibility: hidden;
+.map-box img {
+  height: 100%;
+  width: 100%;
 }
 
-.img1{
-  position: absolute;
+.button-box button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid black;
+  border-radius: 20px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  transition: all 0.4s;
+  opacity: 0.7;
 }
 
-.img2{
-  position: absolute;
-  visibility: hidden;
+.button-box button:hover {
+  color: white;
+  background: black;
 }
 
-.img3{
-  position: absolute;
-  visibility: hidden;
+/* ROOM TEXT PLACEMENT */
+
+.map-box h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  opacity: 0.7;
 }
-.img4{
+#U101 {
   position: absolute;
-  visibility: hidden;
+  left: 249px;
+  top: 175px;
 }
 
-.img5{
+#U102 {
   position: absolute;
-  visibility: hidden;
+  left: 400px;
+  top: 175px;
+}
+
+#U103 {
+  position: absolute;
+  left: 560px;
+  top: 175px;
+}
+
+#U103 {
+  position: absolute;
+  left: 560px;
+  top: 175px;
+}
+
+#U104 {
+  position: absolute;
+  left: 170px;
+  top: 365px;
+}
+
+#U105 {
+  position: absolute;
+  left: 400px;
+  top: 365px;
+}
+
+#U106 {
+  position: absolute;
+  left: 640px;
+  top: 365px;
+}
+
+#U1, #F2, #F3, #F4, #F5 {
+  display: none;
+}
+
+#Forelesningssal {
+  position: absolute;
+  left: 200px;
+  top: 105px;
+}
+
+#Bibliotek {
+  position: absolute;
+  left: 680px;
+  top: 105px;
+}
+
+#Kantine {
+  position: absolute;
+  left: 635px;
+  top: 465px;
+}
+
+#F201 {
+  position: absolute;
+  left: 229px;
+  top: 70px;
+}
+
+#F202 {
+  position: absolute;
+  left: 384px;
+  top: 70px;
+}
+
+#F203 {
+  position: absolute;
+  left: 545px;
+  top: 70px;
+}
+
+#F204 {
+  position: absolute;
+  left: 229px;
+  top: 500px;
+}
+
+#F205 {
+  position: absolute;
+  left: 384px;
+  top: 500px;
+}
+
+#F206 {
+  position: absolute;
+  left: 545px;
+  top: 500px;
+}
+
+#F301 {
+  position: absolute;
+  left: 229px;
+  top: 70px;
+}
+
+#F302 {
+  position: absolute;
+  left: 384px;
+  top: 70px;
+}
+
+#F303 {
+  position: absolute;
+  left: 545px;
+  top: 70px;
+}
+
+#F304 {
+  position: absolute;
+  left: 229px;
+  top: 500px;
+}
+
+#F305 {
+  position: absolute;
+  left: 384px;
+  top: 500px;
+}
+
+#F306 {
+  position: absolute;
+  left: 545px;
+  top: 500px;
+}
+
+#F401 {
+  position: absolute;
+  left: 229px;
+  top: 70px;
+}
+
+#F402 {
+  position: absolute;
+  left: 384px;
+  top: 70px;
+}
+
+#F403 {
+  position: absolute;
+  left: 545px;
+  top: 70px;
+}
+
+#F404 {
+  position: absolute;
+  left: 229px;
+  top: 500px;
+}
+
+#F405 {
+  position: absolute;
+  left: 384px;
+  top: 500px;
+}
+
+#F406 {
+  position: absolute;
+  left: 545px;
+  top: 500px;
+}
+
+#F501 {
+  position: absolute;
+  left: 370px;
+  top: 450px;
 }

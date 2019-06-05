@@ -1,0 +1,30 @@
+#currentPage {
+    text-decoration: underline;
+}
+
+.infoBoxes {
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    max-width: 100%;
+}
+
+.infoBoxes div {
+    width: 15%;
+    height: auto;
+    margin-right: 15px;
+}
+
+.infoBoxes img {
+    border-radius: 25px;
+    box-shadow: -1px 3px 15px -6px #000000;
+    margin-top: 25px;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.infoBoxes h2, .infoBoxes a {
+    font-family: 'Montserrat', sans-serif;
+    flex-wrap: wrap;
+}

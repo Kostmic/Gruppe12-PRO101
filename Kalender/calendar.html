@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="calendar.css"/>
-    <link rel="stylesheet" href="fullcalendar/core/main.css"/>
-    <link href='fullcalendar/daygrid/main.css' rel='stylesheet'/>
-    <script type="text/javascript" src="calendar.js" ></script>
-    <script src="fullcalendar/core/main.js"></script>
-    <script src='fullcalendar/daygrid/main.js'></script>
-    <script src='fullcalendar/interaction/main.js'></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
 
-    <nav>
-      <div class="logo">
-          <h4>The Nav</h4>
-      </div>
-      <ul class="nav-links">
-          <li><a href="../Forside/index.html">Hjem</a></li>
-          <li><a href="../Prosjekt/prosjekt.html#">Prosjekt</a></li>
-          <li><a id="currentPage" href="#">Kalender</a></li>
-          <li><a href="../Fjerdingen/fjerdingen.html">Fjerdingen</a></li>
-          <li><a href="../Om oss/omOss.html">Om oss</a></li>
-      </ul>
-      <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-      </div>
-    </nav>
-    <script src="app.js"></script>
+<head>
+  <link rel="stylesheet" href="calendar.css" />
+  <link rel="stylesheet" href="..\common.css">
+  <link rel="stylesheet" href="fullcalendar/core/main.css" />
+  <link href='fullcalendar/daygrid/main.css' rel='stylesheet' />
+  <script type="text/javascript" src="calendar.js"></script>
+  <script src="fullcalendar/core/main.js"></script>
+  <script src='fullcalendar/daygrid/main.js'></script>
+  <script src='fullcalendar/interaction/main.js'></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title></title>
+</head>
 
-    <div id="calendar"></div>
+<body>
 
-    <div class="form-popup" id="myForm">
+  <nav>
+    <div class="logo">
+      <h4>The Nav</h4>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../Forside/index.html">Hjem</a></li>
+      <li><a href="../To-Do-List/prosjekt.html">Prosjekt</a></li>
+      <li><a id="currentPage" href="#">Kalender</a></li>
+      <li><a href="../Fjerdingen/fjerdingen.html">Fjerdingen</a></li>
+      <li><a href="../Om oss/omOss.html">Om oss</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+  <script src="../common.js"></script>
+
+  <div id="calendar"></div>
+
+  <div class="form-popup" id="myForm">
     <form action="" class="form-container">
       <h1>Create event</h1>
 
@@ -50,7 +53,8 @@
 
       <button type="button" class="btn" id="createBtn">Create event</button>
       <button type="button" class="btn cancel" id="cancelBtn" onclick="toggleForm('none')">Close</button>
-  </form>
+    </form>
   </div>
-  </body>
+</body>
+
 </html>
