@@ -26,22 +26,7 @@ main {
     position: relative;
     background-color: #FFF;
 }
-.clear {
-    width : 30px;
-    height: 30px;
-    position: absolute;
-    right:20px;
-    top: 20px;
-}
-.clear i {
-    font-size: 30px;
-    color: #FFF;
-}
-.clear i:hover {
-    cursor: pointer;
-    text-shadow: 1px 3px 5px #000;
-    transform: rotate(45deg);
-}
+
 #header {
     position: absolute;
     top: 5px;
@@ -63,9 +48,7 @@ h1 {
     max-height:350px;
     background-color: #FFF;
     overflow: auto;
-}
-.content::-webkit-scrollbar { 
-    display: none; 
+    overflow-x: hidden;
 }
 
 .item {
@@ -73,7 +56,6 @@ h1 {
     min-height: 45px;
     position: relative;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    list-style: none;
     padding: 0;
     margin: 0;
     cursor: grab; 
@@ -106,7 +88,7 @@ h1 {
 .item i.de {
     position: absolute;
     font-size: 25px;
-    right:15px;
+    right:25px;
     top:10px;
 }
 .item i.de:hover {
@@ -163,9 +145,4 @@ h1 {
 /* ------------ Drag & Drop ------------ */
 .invisible {
     display: none;
-}
-
-.hovered {
-    background: #f4f4f4;
-    border-style: dashed;
 }

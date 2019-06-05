@@ -13,6 +13,7 @@ const doingList = document.getElementById("doingList");
 const doneList = document.getElementById("doneList");
 
 for(const container of containers) {
+    container.addEventListener("dragstart", dragStart);
     container.addEventListener("dragover", dragOver);
     container.addEventListener("dragenter", dragEnter);
     container.addEventListener("dragleave", dragLeave);
@@ -39,12 +40,12 @@ if (data) {
 // Load items to the user's interface
 function loadList(array) {
     array.forEach(function(item) {
-        addToDo(item.name, item.id, item.trash);
+        addToDo(item.name, item.id, item.trash, item.currentPosition);
     });
 };
 
 // Adding to-do function
-function addToDo(toDo, id, trash) {
+function addToDo(toDo, id, trash, currentPosition) {
     
     if (trash) { return; }
 
@@ -53,7 +54,15 @@ function addToDo(toDo, id, trash) {
     const position ="beforeEnd";
 
     
+    if(currentPosition == 1){
         toDoList.insertAdjacentHTML(position, item);
+    }
+    if(currentPosition == 2){
+        doingList.insertAdjacentHTML(position, item);
+    }
+    if(currentPosition == 3){
+        doneList.insertAdjacentHTML(position, item);
+    }
 };
 
 input.addEventListener("keyup", event => {
@@ -61,12 +70,13 @@ input.addEventListener("keyup", event => {
         const toDo = input.value;
         // Check if input is empty
         if (toDo) {
-            addToDo(toDo, id, false);
+            addToDo(toDo, id, false, 1);
 
             LIST.push({
                 name: toDo,
                 id: id,
                 trash : false,
+                currentPosition: 1
             });
 
             // Add item to localstorage ( this code mustbe addedd where the LIST array is updated)
@@ -124,8 +134,8 @@ doneItems.addEventListener("click", function(event){
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
 
-let currentItem;
 // Drag & Drop
+let currentItem;
 function dragStart() {
     const item = event.target;
     setTimeout(() => item.className = "invisible", 0);
@@ -133,8 +143,7 @@ function dragStart() {
 }
 
 function dragEnd() {
-    const item = event.target;
-    item.className = "item";
+    
 }
 
 toDoList.addEventListener("dragstart", function(event){
@@ -142,14 +151,10 @@ toDoList.addEventListener("dragstart", function(event){
 })
    
 toDoList.addEventListener("dragstart", function(event) {
-    const item = event.target;
-    
     dragStart();
 })
 
 toDoList.addEventListener("dragend", function(event) {
-    const item = event.target;
-    
     dragEnd();
 })
 
@@ -169,14 +174,23 @@ function dragLeave() {
 let currentContainer;
 
 function dragDrop() {
+    if(currentItem){
     currentItem.className = "item";
+    
+    if(currentContainer == "toDo"){
+        toDoList.append(currentItem);
+        LIST[currentItem.id].currentPosition = 1;
+        localStorage.setItem("TODO", JSON.stringify(LIST));
+    }
     if(currentContainer == "doing"){
         doingList.append(currentItem);
+        LIST[currentItem.id].currentPosition = 2;
+        localStorage.setItem("TODO", JSON.stringify(LIST));
     }
     if(currentContainer == "done"){
         doneList.append(currentItem);
+        LIST[currentItem.id].currentPosition = 3;
+        localStorage.setItem("TODO", JSON.stringify(LIST));
     }
-    if(currentContainer == "toDo"){
-        toDoList.append(currentItem);
-    }
+}
 }
