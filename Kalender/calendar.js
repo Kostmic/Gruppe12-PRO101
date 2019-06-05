@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
 
   calendar = new FullCalendar.Calendar(calendarEl, {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     customButtons: {
       addEvent: {
         text: '+',
-        click: function() {
+        click: function () {
           toggleForm("block");
         }
       }
@@ -24,10 +24,31 @@ document.addEventListener('DOMContentLoaded', function() {
   calendar.render();
 });
 
-window.onload = function() {
+window.onload = function () {
   var loginBtn = document.getElementById("loginBtn");
   loginBtn.addEventListener("click", assignEvent);
+
+  let data = localStorage.getItem("events");
+
+  if (data) {
+    LIST = JSON.parse(data);
+    id = LIST.length; // Set the id to the last one in the list
+    loadEvents(LIST);
+  } else {
+    // If data is empty
+    LIST = [];
+    id = 0;
+  };
 }
+
+function loadEvents(array) {
+  array.forEach(function (item) {
+    calendar.addEvent({
+      title: item.title + "\n" + "Room: " + item.room,
+      start: item.date
+    });
+  });
+};
 
 function toggleForm(state) {
   document.getElementById("myForm").style.display = state;
@@ -47,6 +68,15 @@ function assignEvent() {
       title: inputTitle + "\n" + "Room: " + inputRoom,
       start: inputDate
     });
+
+    LIST.push({
+      title: inputTitle,
+      date: inputDate,
+      room: inputRoom,
+      id: LIST.length
+    });
+    localStorage.setItem("events", JSON.stringify(LIST));
+
   } else {
     alert("Invalid date. Format is YYYY-MM-DD.");
   }
