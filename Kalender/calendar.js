@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.onload = function () {
-  var loginBtn = document.getElementById("loginBtn");
-  loginBtn.addEventListener("click", assignEvent);
+  var createBtn = document.getElementById("createBtn");
+  createBtn.addEventListener("click", assignEvent);
 
   let data = localStorage.getItem("events");
 
