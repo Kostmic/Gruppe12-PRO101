@@ -5,6 +5,7 @@
   height: 250px;
   width: 250px;
   margin-left: 10px;
+  top:200px;
 }
 
 
@@ -15,5 +16,7 @@
 }
 
 img{
-
+ height: 90px;
+ width: 90px;
+ top:100px;
 }
