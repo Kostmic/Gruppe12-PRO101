@@ -8,38 +8,31 @@ body {
 }
 
 .howBox {
-  position: relative;
-  clear: left;
-  align-self: center;
+  display: inline-block;
   text-align: center;
-  height: 250px;
-  width: 250px;
-  margin-left: 50px;
-  top: 100px;
-}
-
-.howText{
-  font-size: 18px;
-  margin-left: 50px;
+  box-sizing: border-box;
+  margin-top: 100px;
 }
 
 #howBoxes {
-  text-align: center;
+  justify-items: center;
   display: grid;
   grid-template-columns: auto auto auto;
+
 }
 
 .howHeadline{
-  width: 350px;
+  width: 500px;
+  font-size: 25px;
 }
 
 .howBoxText{
-  width: 350px;
-  font-size: 20px;
+  width: 500px;
+  font-size: 30px;
 }
 
 img {
-  height: 250px;
-  width: 350px;
+  height: 400px;
+  width: 500px;
   top: 100px;
 }
