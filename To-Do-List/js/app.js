@@ -26,7 +26,23 @@ let LIST, id;
 // get item from localstorage
 let data = localStorage.getItem("TODO");
 let usernameData = JSON.parse(localStorage.getItem("username"));
+
+if (!usernameData) {
+    alert("You're not signed in.");
+    LIST = [];
+    id = 0;
+
+    LIST.push({
+        username: "Guest",
+        id: 0
+    });
+    localStorage.setItem("username", JSON.stringify(LIST));
+};
+usernameData = JSON.parse(localStorage.getItem("username"));
+
 let loginUsername = usernameData[(usernameData.length) - 1].username;
+
+
 
 // Check if data is not empty
 if (data) {
