@@ -1,3 +1,7 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
   background-color: #555;
@@ -83,7 +87,7 @@ nav {
   align-items: center;
   min-height: 8vh;
   background-color: #5D4954;
-  font-family: 'poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .logo {
