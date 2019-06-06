@@ -6,6 +6,8 @@ body {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   opacity: 0.6;
+  margin-top: 10px;
+  margin-bottom: 12px;
 }
 
 .login-container {
