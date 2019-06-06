@@ -50,3 +50,9 @@ reset.addEventListener("click", function(){
     localStorage.clear();
     window.location.href = "../Forside/index.html";
 })
+
+const newDate = document.querySelector(".newDate");
+
+newDate.addEventListener("click", function(){
+    window.location.href = "../Kalender/calendar.html"
+})
