@@ -66,6 +66,7 @@
 #currentPage {
   text-decoration: underline;
 }
+<<<<<<< HEAD
 
 
 /* NAVBAR */
@@ -185,3 +186,5 @@ nav {
 .toogle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
+=======
+>>>>>>> 0788194933dbec1d354897c11f1c7d1285155733

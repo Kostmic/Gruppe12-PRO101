@@ -1,3 +1,4 @@
+//Adds calendar functionality
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
 
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   calendar.render();
 });
+
 
 window.onload = function () {
   var createBtn = document.getElementById("createBtn");

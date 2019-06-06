@@ -50,6 +50,8 @@ h1 {
     background-color: #EFF1F3;
     overflow: auto;
     overflow-x: hidden;
+    /*border-width: 1px!important;
+    border: 1px solid #e1e4e8!important;*/
 }
 
 .item {
@@ -109,6 +111,7 @@ h1 {
     font-size: 25px;
     right: 20px;
     top: 18px;
+    opacity: 0.7;
 }
 
 .item i.de:hover {
