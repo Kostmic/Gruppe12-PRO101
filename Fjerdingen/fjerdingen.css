@@ -1,3 +1,7 @@
+body {
+  background: linear-gradient(to right, #9796f0, #fbc7d4);
+}
+
 .button-box {
   display: flex;
   justify-content: center;
