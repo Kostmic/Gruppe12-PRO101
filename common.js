@@ -48,7 +48,7 @@ const reset = document.querySelector(".reset");
 
 reset.addEventListener("click", function(){
     localStorage.clear();
-    window.location.href = "../Forside/index.html";
+    window.location.href = "../Forside/Forside.html";
 })
 
 const newDate = document.querySelector(".newDate");

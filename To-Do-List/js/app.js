@@ -57,18 +57,18 @@ if (data) {
 // Load items to the user's interface
 function loadList(array) {
     array.forEach(function (item) {
-        addToDo(item.name, item.id, item.trash, item.currentPosition, item.author);
+        addToDo(item.name, item.id, item.trash, item.currentPosition, item.author, ((item.members).join(', ')));
     });
 }
 
 // Adding to-do function
-function addToDo(toDo, id, trash, currentPosition, username) {
+function addToDo(toDo, id, trash, currentPosition, username, members) {
 
     if (trash) {
         return;
     };
 
-    const item = '<div class="item" draggable="true" id="' + id + '"><i id=' + id + ' class="fa fa-info-circle" job="info"></i> <p class="text">' + toDo + '<p class="authorText">Added by: ' + username + '</p></p><i class="fa fa-trash-o de" job="delete" id="' + id + '"></i></div>';
+    const item = '<div class="item" draggable="true" id="' + id + '"><i id=' + id + ' class="fa fa-info-circle" job="info"></i> <p class="text">' + toDo + '<p class="authorText">Added by: ' + username + '</p></p> <p id= ' + id + 'm class="assignedTo">Assigned to: ' + members + '</p><i class="fa fa-trash-o de" job="delete" id="' + id + '"></i></div>';
 
     const position = "beforeEnd";
 
@@ -89,7 +89,7 @@ input.addEventListener("keyup", event => {
         const toDo = input.value;
         // Check if input is empty
         if (toDo) {
-            addToDo(toDo, id, false, 1, loginUsername);
+            addToDo(toDo, id, false, 1, loginUsername, "");
 
             LIST.push({
                 name: toDo,
@@ -97,7 +97,8 @@ input.addEventListener("keyup", event => {
                 trash: false,
                 currentPosition: 1,
                 author: loginUsername,
-                description: ""
+                description: "",
+                members: []
             });
 
             // Add item to localstorage ( this code mustbe addedd where the LIST array is updated)
@@ -125,6 +126,7 @@ toDoItems.addEventListener("click", function (event) {
     if (elementJob == "delete") {
         removeToDo(element);
     } else if (elementJob == "info") {
+        toggleForm("none");
         toggleForm("block", LIST[element.id]);
     }
 
@@ -139,6 +141,7 @@ doing.addEventListener("click", function (event) {
     if (elementJob == "delete") {
         removeToDo(element);
     } else if (elementJob == "info") {
+        toggleForm("none");
         toggleForm("block", LIST[element.id]);
     }
 
@@ -153,6 +156,7 @@ doneItems.addEventListener("click", function (event) {
     if (elementJob == "delete") {
         removeToDo(element);
     } else if (elementJob == "info") {
+        toggleForm("none");
         toggleForm("block", LIST[element.id]);
     }
 
@@ -208,14 +212,19 @@ function dragDrop() {
     }
 }
 
-function toggleForm(state, info) {
-
+function toggleForm(state, info, element) {
+    if (state == "none") {
+        return (document.getElementById("myForm").style.display = state);
+    };
     document.getElementById("myForm").style.display = state;
     var task = document.getElementById("taskTitle");
     var id = document.getElementById("taskId");
     var members = document.getElementById("taskMembers");
     var desc = document.getElementById("subject");
     var saveBtn = document.getElementById("saveBtn");
+    var memberBtn = document.getElementById("memberButton");
+    var memberInput = document.getElementById("memberInput");
+    var members = document.getElementById("members");
 
     saveBtn.addEventListener("click", function () {
         LIST[info.id].description = desc.value;
@@ -223,12 +232,22 @@ function toggleForm(state, info) {
         localStorage.setItem("TODO", JSON.stringify(LIST));
     });
 
-    task.innerHTML = "Task:" + "<br />" + info.name;
+    memberBtn.addEventListener("click", function() {
+        var inputVal = memberInput.value;
+        if (inputVal != "") {
+            (LIST[info.id].members).push(inputVal);
+            localStorage.setItem("TODO", JSON.stringify(LIST));
+            memberInput.value = '';
+            console.log((LIST[info.id].id)+'m');
+            document.getElementById((LIST[info.id].id)+'m').innerHTML = "Assigned to: " + (LIST[info.id].members).join(', ');
+        }
+    })
+    members.innerHTML = "Assigned: " + (LIST[info.id].members).join(', ');
+
+    task.innerHTML = "Task:" + "<br />" + "" + info.name;
     if (desc.value = "") {
         desc.placeholder = "Add a description..."
     } else {
         desc.value = info.description;
     };
-
-    id.innerHTML = info.id;
 }
