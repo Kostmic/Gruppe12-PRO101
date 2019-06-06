@@ -3,8 +3,6 @@ const sidenavSlide = () => {
     const sidenav = document.querySelector(".sidenav");
     const sidenavLinks = document.querySelectorAll(".sidenav li");
 
-
-
     burger.addEventListener('click', () => {
         //Toogle nav 
         sidenav.classList.toggle('sidenavActive');
@@ -20,8 +18,6 @@ const sidenavSlide = () => {
         //Burger Animation
         burger.classList.toggle('toogle');
     });
-
-
 }
 
 sidenavSlide();
@@ -47,3 +43,10 @@ document.querySelector(".darkMode").addEventListener("click",
         y = y < darkMode.length ? ++y : 0;
         document.querySelector("body").style.background = darkMode[y];
     })
+
+const reset = document.querySelector(".reset");
+
+reset.addEventListener("click", function(){
+    localStorage.clear();
+    window.location.href = "../Forside/index.html";
+})
