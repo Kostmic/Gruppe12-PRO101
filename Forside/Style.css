@@ -9,11 +9,11 @@ body {
 
 .howBox {
   position: relative;
-  align-self: center;
+  align-self: left;
   text-align: center;
   height: 250px;
   width: 250px;
-  margin-left: 100px;
+  margin-left: 50px;
   top: 100px;
 }
 
@@ -21,7 +21,6 @@ body {
 #howBoxes {
   display: grid;
   grid-template-columns: auto auto auto;
-  justify-content: center;
 }
 
 img {
