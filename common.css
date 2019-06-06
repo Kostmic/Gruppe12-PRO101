@@ -130,3 +130,10 @@ a:hover {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+h4:hover {
+    cursor: default;
+}
+
+h4:active {
+    cursor: default;
+}
