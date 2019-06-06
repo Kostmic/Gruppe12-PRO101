@@ -1,19 +1,25 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
 body {
     background: linear-gradient(to right, #9796f0, #fbc7d4);
+    background-image:
 }
 
 #currentPage {
     text-decoration: underline;
 }
 
+.infoWrapper{
+  top: 170px;
+  left: 220px;
+  text-align: center;
+  position: absolute;
+}
+
 .infoBox{
   position: relative;
   text-align: center;
   font-size: 25px;
-  width: 800px;
-}
-
-.infoWrapper{
-  top: 200px;
-  position: absolute;
+  width: 1000px;
 }
