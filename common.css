@@ -16,7 +16,7 @@ body {
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background-color: #5D4954;
+    background-color: #16FFBD;
     font-family: 'Roboto', sans-serif;
     position: sticky;
     position: -webkit-sticky;
@@ -64,7 +64,7 @@ body {
     z-index: 2;
     bottom: 0;
     right: 0;
-    background-color: #5d4954;
+    background-color: #16FFBD;
     overflow-x: hidden;
     padding-top: 60px;
     transform: translateX(100%);
