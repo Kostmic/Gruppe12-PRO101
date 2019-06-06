@@ -218,7 +218,11 @@ h1 {
 }
 
 /* Add styles to the form container */
-
+.form-container {
+    background: white;
+    border-radius: 8px;
+    height: 100%;
+}
 
 
 /* Set style for Create event button */
@@ -270,35 +274,30 @@ h1 {
     opacity: 0.8;
 }
 
-/* label color */
-.input-field {
-    color: #000;
+#taskTitle {
+    padding-bottom: 10px;
 }
 
-/* label focus color */
-.input-field input[type=text]:focus+label {
-    color: #000;
+.form-group {
+    margin-left: 15px;
+    margin-bottom: 30px;
 }
 
-/* label underline focus color */
-.input-field input[type=text]:focus {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
+#button {
+    display: inline-block;
+    padding: 0.25em 0.8em;
+    border: 0.1em solid black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    transition: all 0.4s;
+    margin: 1em auto;
+    margin-left: 38.9%;
+    opacity: 0.5;
 }
 
-/* valid color */
-.input-field input[type=text].valid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
-}
-
-/* invalid color */
-.input-field input[type=text].invalid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
-}
-
-/* icon prefix focus color */
-.input-field .prefix.active {
-    color: #000;
+#button:hover {
+    color: white;
+    background: black;
 }

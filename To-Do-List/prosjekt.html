@@ -95,13 +95,14 @@
     <div class="form-popup" id="myForm">
         <form class="form-container">
             <p id="taskTitle">Task</p>
+            <hr>
             <p id="taskDesc">Description:</p>
             <textarea id="subject" name="subject" placeholder="Add a description..."
                 style="height: 50px; width: 220px;"></textarea>
             <p id="taskMembers">Assignees:</p>
-            <div class="input-field">
-                <input id="email_inline" type="email" class="validate">
-                <label for="email_inline">Email</label>
+            <div class="form-group">
+                <input type="text" required="required" />
+                <a id="button" href="#">SIGN IN</a>
             </div>
             <button type="button" class="btn" id="saveBtn">Save task</button>
             <button type="button" class="btn cancel" id="cancelBtn" onclick="toggleForm('none')">Close</button>

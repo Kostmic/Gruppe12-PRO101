@@ -125,7 +125,6 @@ toDoItems.addEventListener("click", function (event) {
     if (elementJob == "delete") {
         removeToDo(element);
     } else if (elementJob == "info") {
-        console.log(LIST[element.id]);
         toggleForm("block", LIST[element.id]);
     }
 
@@ -220,7 +219,6 @@ function toggleForm(state, info) {
 
     saveBtn.addEventListener("click", function () {
         LIST[info.id].description = desc.value;
-        console.log(LIST[info.id].description);
         document.getElementById("myForm").style.display = 'none';
         localStorage.setItem("TODO", JSON.stringify(LIST));
     });
