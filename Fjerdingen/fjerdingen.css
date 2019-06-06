@@ -44,6 +44,7 @@
   font-weight: normal;
   opacity: 0.7;
 }
+
 #U101 {
   position: absolute;
   left: 249px;
@@ -86,7 +87,11 @@
   top: 365px;
 }
 
-#U1, #F2, #F3, #F4, #F5 {
+#U1,
+#F2,
+#F3,
+#F4,
+#F5 {
   display: none;
 }
 
