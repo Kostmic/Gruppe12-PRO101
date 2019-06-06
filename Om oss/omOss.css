@@ -11,15 +11,19 @@ body {
 }
 
 .infoWrapper{
-  top: 170px;
-  left: 220px;
   text-align: center;
   position: absolute;
+  border-style: solid;
+  border-color: black;
+  width: 100%;
+  left:0;
+  right:0;
 }
 
 .infoBox{
+  top: 100px;
+  width: 90%;
+  display: inline-block;
   position: relative;
-  text-align: center;
   font-size: 25px;
-  width: 1000px;
 }
