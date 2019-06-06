@@ -49,7 +49,7 @@ body {
     font-size: 14px;
 }
 
-a:hover {
+.nav-links a:hover {
     background-color: rgb(58, 51, 55);
 }
 
