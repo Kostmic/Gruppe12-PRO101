@@ -25,6 +25,9 @@ main {
     border-radius: 15px 15px 0 0;
     position: relative;
     background-color: #EFF1F3;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #header {
@@ -50,6 +53,9 @@ h1 {
     background-color: #EFF1F3;
     overflow: auto;
     overflow-x: hidden;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     /*border-width: 1px!important;
     border: 1px solid #e1e4e8!important;*/
 }
@@ -58,7 +64,7 @@ h1 {
     width: 92%;
     min-height: 65px;
     position: relative;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0;
     margin: 0;
     cursor: grab;
@@ -139,9 +145,10 @@ h1 {
     width: 380px;
     height: 60px;
     background-color: #EFF1F3;
-    padding: 10px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 0px 0px 6px 6px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 15px 15px;
 }
 
 .add-to-do i {
@@ -161,6 +168,7 @@ h1 {
     border: none;
     font-size: 20px;
     padding-left: 10px;
+    top: 10px;
 }
 
 .add-to-do input::-webkit-input-placeholder {
