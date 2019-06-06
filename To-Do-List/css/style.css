@@ -143,8 +143,9 @@ h1 {
 
 .add-to-do i {
     position: absolute;
-    left: 10px;
-    font-size: 40px;
+    left: 14px;
+    bottom: 19px;
+    font-size: 25px;
     color: #4162f6;
 }
 
