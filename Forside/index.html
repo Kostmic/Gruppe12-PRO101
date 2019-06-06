@@ -11,16 +11,17 @@
 </head>
 
 <body>
-  <nav>
+  <nav class="navigation-bar">
     <div class="logo">
       <h4>The Nav</h4>
     </div>
     <ul class="nav-links">
-      <li><a style="text-decoration: underline;" href="#">Hjem</a></li>
-      <li><a href="../To-Do-List/prosjekt.html">Prosjekt</a></li>
-      <li><a href="../Kalender/calendar.html">Kalender</a></li>
-      <li><a href="../Fjerdingen/fjerdingen.html">Fjerdingen</a></li>
-      <li><a href="../Om oss/omOss.html">Om oss</a></li>
+      <li><a href="#"><i class="fas fa-home"></i>Hjem</a></li>
+      <li><a href="../To-Do-List/prosjekt.html"><i class="fas fa-tasks"></i>Prosjekt</a></li>
+      <li><a href="../Kalender/calendar.html"><i class="far fa-calendar-alt"></i>Kalender</a></li>
+      <li><a href="../Fjerdingen/fjerdingen.html"><i class="fas fa-map-marker-alt"></i>Fjerdingen</a></li>
+      <li><a href="../Om oss/omOss.html"><i class="fas fa-address-card"></i>Om oss</a></li>
+      <li><a href="../Innlogging/login.html"><i class="fa fa-fw fa-user"></i>Logg inn</a></li>
     </ul>
     <div class="burger">
       <div class="line1"></div>
@@ -29,7 +30,17 @@
     </div>
   </nav>
 
+  <nav id="mySidenav" class="sidenav">
+    <ul class="sidenavLinks">
+      <li><a href="#" class="background"><i class="fas fa-palette"></i>Endre bakgrunn</a></li>
+      <li><a href="#" class="darkMode">Dark mode</a></li>
+      <li><a href="#"><i class="fas fa-plus"></i>Opprett prosjekt</a></li>
+      <li><a href="#"><i class="fas fa-calendar-plus"></i>Ny dato</a></li>
+    </ul>
+  </nav>
+
   <script src="../common.js"></script>
+  <script src="https://kit.fontawesome.com/14cce7d65d.js"></script>
 
   <div id="howBoxes">
     <div class="howBox">

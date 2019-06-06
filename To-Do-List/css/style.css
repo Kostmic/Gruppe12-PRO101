@@ -109,6 +109,7 @@ h1 {
     font-size: 25px;
     right: 20px;
     top: 18px;
+    opacity: 0.7;
 }
 
 .item i.de:hover {
