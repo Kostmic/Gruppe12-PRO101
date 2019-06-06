@@ -6,30 +6,14 @@ body {
     text-decoration: underline;
 }
 
-.infoBoxes {
-    display: flex;
-    justify-content: center;
-    margin-left: 20px;
-    max-width: 100%;
+.infoBox{
+  position: relative;
+  text-align: center;
+  font-size: 25px;
+  width: 800px;
 }
 
-.infoBoxes div {
-    width: 15%;
-    height: auto;
-    margin-right: 15px;
-}
-
-.infoBoxes img {
-    border-radius: 25px;
-    box-shadow: -1px 3px 15px -6px #000000;
-    margin-top: 25px;
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-.infoBoxes h2,
-.infoBoxes a {
-    font-family: 'Roboto', sans-serif;
-    flex-wrap: wrap;
+.infoWrapper{
+  top: 200px;
+  position: absolute;
 }
