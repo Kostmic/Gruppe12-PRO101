@@ -24,7 +24,8 @@
     height: auto;
 }
 
-.infoBoxes h2, .infoBoxes a {
+.infoBoxes h2,
+.infoBoxes a {
     font-family: 'Montserrat', sans-serif;
     flex-wrap: wrap;
 }

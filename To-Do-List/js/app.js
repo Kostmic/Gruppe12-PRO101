@@ -12,7 +12,7 @@ const toDoList = document.getElementById("toDoList");
 const doingList = document.getElementById("doingList");
 const doneList = document.getElementById("doneList");
 
-for(const container of containers) {
+for (const container of containers) {
     container.addEventListener("dragstart", dragStart);
     container.addEventListener("dragover", dragOver);
     container.addEventListener("dragenter", dragEnter);
@@ -25,6 +25,8 @@ let LIST, id;
 
 // get item from localstorage
 let data = localStorage.getItem("TODO");
+let usernameData = JSON.parse(localStorage.getItem("username"));
+let loginUsername = usernameData[(usernameData.length) - 1].username;
 
 // Check if data is not empty
 if (data) {
@@ -39,50 +41,53 @@ if (data) {
 
 // Load items to the user's interface
 function loadList(array) {
-    array.forEach(function(item) {
-        addToDo(item.name, item.id, item.trash, item.currentPosition);
+    array.forEach(function (item) {
+        addToDo(item.name, item.id, item.trash, item.currentPosition, item.author);
     });
 };
 
 // Adding to-do function
-function addToDo(toDo, id, trash, currentPosition) {
-    
-    if (trash) { return; }
+function addToDo(toDo, id, trash, currentPosition, username) {
 
-    const item = '<div class="item" draggable="true" id="' + id + '"><p class="text">'+ toDo +'</p><i class="fa fa-trash-o de" job="delete" id="'+ id +'"></i></div>';
+    if (trash) {
+        return;
+    };
 
-    const position ="beforeEnd";
+    const item = '<div class="item" draggable="true" id="' + id + '"><i class="fa fa-info-circle" job="info"></i> <p class="text">' + toDo + '<p class="authorText">Added by: ' + username + '</p></p><i class="fa fa-trash-o de" job="delete" id="' + id + '"></i></div>';
 
-    
-    if(currentPosition == 1){
+    const position = "beforeEnd";
+
+
+    if (currentPosition == 1) {
         toDoList.insertAdjacentHTML(position, item);
     }
-    if(currentPosition == 2){
+    if (currentPosition == 2) {
         doingList.insertAdjacentHTML(position, item);
     }
-    if(currentPosition == 3){
+    if (currentPosition == 3) {
         doneList.insertAdjacentHTML(position, item);
     }
 };
 
 input.addEventListener("keyup", event => {
-    if (event.keyCode == 13){
+    if (event.keyCode == 13) {
         const toDo = input.value;
         // Check if input is empty
         if (toDo) {
-            addToDo(toDo, id, false, 1);
+            addToDo(toDo, id, false, 1, loginUsername);
 
             LIST.push({
                 name: toDo,
                 id: id,
-                trash : false,
-                currentPosition: 1
+                trash: false,
+                currentPosition: 1,
+                author: loginUsername
             });
 
             // Add item to localstorage ( this code mustbe addedd where the LIST array is updated)
             localStorage.setItem("TODO", JSON.stringify(LIST));
 
-            id ++;
+            id++;
 
         }
         input.value = "";
@@ -98,11 +103,11 @@ function removeToDo(element) {
 
 // Target the items created dynamically
 
-toDoItems.addEventListener("click", function(event){
+toDoItems.addEventListener("click", function (event) {
     const element = event.target; // Return the clicked element inside list
     const elementJob = element.attributes.job.value; // Delete
-    
-    if (elementJob == "delete"){
+
+    if (elementJob == "delete") {
         removeToDo(element);
     }
 
@@ -110,11 +115,11 @@ toDoItems.addEventListener("click", function(event){
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
 
-doing.addEventListener("click", function(event){
+doing.addEventListener("click", function (event) {
     const element = event.target; // Return the clicked element inside list
     const elementJob = element.attributes.job.value; // Delete
-    
-    if (elementJob == "delete"){
+
+    if (elementJob == "delete") {
         removeToDo(element);
     }
 
@@ -122,10 +127,10 @@ doing.addEventListener("click", function(event){
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
 
-doneItems.addEventListener("click", function(event){
+doneItems.addEventListener("click", function (event) {
     const element = event.target; // Return the clicked element inside list
     const elementJob = element.attributes.job.value; // Delete
-    
+
     if (elementJob == "delete") {
         removeToDo(element);
     }
@@ -136,6 +141,7 @@ doneItems.addEventListener("click", function(event){
 
 // Drag & Drop
 let currentItem;
+
 function dragStart() {
     const item = event.target;
     setTimeout(() => item.className = "invisible", 0);
@@ -143,18 +149,18 @@ function dragStart() {
 }
 
 function dragEnd() {
-    
+
 }
 
-toDoList.addEventListener("dragstart", function(event){
-    dragStart();
-})
-   
-toDoList.addEventListener("dragstart", function(event) {
+toDoList.addEventListener("dragstart", function (event) {
     dragStart();
 })
 
-toDoList.addEventListener("dragend", function(event) {
+toDoList.addEventListener("dragstart", function (event) {
+    dragStart();
+})
+
+toDoList.addEventListener("dragend", function (event) {
     dragEnd();
 })
 
@@ -168,29 +174,29 @@ function dragEnter(e) {
 }
 
 function dragLeave() {
-    
+
 }
 
 let currentContainer;
 
 function dragDrop() {
-    if(currentItem){
-    currentItem.className = "item";
-    
-    if(currentContainer == "toDo"){
-        toDoList.append(currentItem);
-        LIST[currentItem.id].currentPosition = 1;
-        localStorage.setItem("TODO", JSON.stringify(LIST));
+    if (currentItem) {
+        currentItem.className = "item";
+
+        if (currentContainer == "toDo") {
+            toDoList.append(currentItem);
+            LIST[currentItem.id].currentPosition = 1;
+            localStorage.setItem("TODO", JSON.stringify(LIST));
+        }
+        if (currentContainer == "doing") {
+            doingList.append(currentItem);
+            LIST[currentItem.id].currentPosition = 2;
+            localStorage.setItem("TODO", JSON.stringify(LIST));
+        }
+        if (currentContainer == "done") {
+            doneList.append(currentItem);
+            LIST[currentItem.id].currentPosition = 3;
+            localStorage.setItem("TODO", JSON.stringify(LIST));
+        }
     }
-    if(currentContainer == "doing"){
-        doingList.append(currentItem);
-        LIST[currentItem.id].currentPosition = 2;
-        localStorage.setItem("TODO", JSON.stringify(LIST));
-    }
-    if(currentContainer == "done"){
-        doneList.append(currentItem);
-        LIST[currentItem.id].currentPosition = 3;
-        localStorage.setItem("TODO", JSON.stringify(LIST));
-    }
-}
 }
