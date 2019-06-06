@@ -168,18 +168,6 @@ function dragEnd() {
 
 }
 
-toDoList.addEventListener("dragstart", function (event) {
-    dragStart();
-})
-
-toDoList.addEventListener("dragstart", function (event) {
-    dragStart();
-})
-
-toDoList.addEventListener("dragend", function (event) {
-    dragEnd();
-})
-
 function dragOver(e) {
     e.preventDefault();
 }
