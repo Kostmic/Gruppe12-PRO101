@@ -13,8 +13,6 @@ body {
 .infoWrapper{
   text-align: center;
   position: absolute;
-  border-style: solid;
-  border-color: black;
   width: 100%;
   left:0;
   right:0;
