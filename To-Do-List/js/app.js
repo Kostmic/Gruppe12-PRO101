@@ -18,6 +18,7 @@ for (const container of containers) {
     container.addEventListener("dragenter", dragEnter);
     container.addEventListener("dragleave", dragLeave);
     container.addEventListener("drop", dragDrop);
+    container.addEventListener("dragend", dragEnd)
 }
 
 // Variables
@@ -165,7 +166,7 @@ function dragStart() {
 }
 
 function dragEnd() {
-
+    currentItem.className = "item";
 }
 
 function dragOver(e) {
