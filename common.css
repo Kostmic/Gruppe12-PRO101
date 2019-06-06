@@ -18,6 +18,10 @@ body {
     min-height: 8vh;
     background-color: #5D4954;
     font-family: 'poppins', sans-serif;
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: 2;
+    top: 0;
 }
 
 .logo {
@@ -57,7 +61,7 @@ a:hover {
     position: fixed;
     flex-direction: column;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
     bottom: 0;
     right: 0;
     background-color: #5d4954;
