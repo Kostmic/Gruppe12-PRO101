@@ -15,24 +15,23 @@ body {
 }
 
 #howBoxes {
-  justify-items: center;
   display: grid;
   grid-template-columns: auto auto auto;
 
 }
 
 .howHeadline{
-  width: 435px;
+  width: 440px;
   font-size: 25px;
 }
 
 .howBoxText{
-  width: 435px;
+  width: 440px;
   font-size: 30px;
 }
 
 img {
-  height: 335px;
-  width: 435px;
+  height: 340px;
+  width: 440px;
   top: 100px;
 }
