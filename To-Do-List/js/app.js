@@ -98,7 +98,8 @@ input.addEventListener("keyup", event => {
                 currentPosition: 1,
                 author: loginUsername,
                 description: "",
-                members: []
+                members: [],
+                date: ""
             });
 
             // Add item to localstorage ( this code mustbe addedd where the LIST array is updated)
@@ -212,10 +213,11 @@ function dragDrop() {
     }
 }
 
-function toggleForm(state, info, element) {
+function toggleForm(state, info) {
     if (state == "none") {
         return (document.getElementById("myForm").style.display = state);
     };
+
     document.getElementById("myForm").style.display = state;
     var task = document.getElementById("taskTitle");
     var id = document.getElementById("taskId");
@@ -226,22 +228,29 @@ function toggleForm(state, info, element) {
     var memberInput = document.getElementById("memberInput");
     var members = document.getElementById("members");
 
-    saveBtn.addEventListener("click", function () {
+    var _date = function () {
+        saveBtn.removeEventListener("click", _date);
         LIST[info.id].description = desc.value;
+        LIST[info.id].date = dateInput.value;
         document.getElementById("myForm").style.display = 'none';
         localStorage.setItem("TODO", JSON.stringify(LIST));
-    });
+    }
+    saveBtn.addEventListener("click", _date);
 
-    memberBtn.addEventListener("click", function() {
+    var _member = function() {
+        memberBtn.removeEventListener("click", _member);
+
         var inputVal = memberInput.value;
         if (inputVal != "") {
             (LIST[info.id].members).push(inputVal);
             localStorage.setItem("TODO", JSON.stringify(LIST));
             memberInput.value = '';
-            console.log((LIST[info.id].id)+'m');
             document.getElementById((LIST[info.id].id)+'m').innerHTML = "Assigned to: " + (LIST[info.id].members).join(', ');
         }
-    })
+    };
+
+    memberBtn.addEventListener("click", _member);
+        
     members.innerHTML = "Assigned: " + (LIST[info.id].members).join(', ');
 
     task.innerHTML = "Task:" + "<br />" + "" + info.name;
@@ -249,5 +258,12 @@ function toggleForm(state, info, element) {
         desc.placeholder = "Add a description..."
     } else {
         desc.value = info.description;
+    };
+    console.log(info.date);
+    dateInput.innerHTML = info.date;
+    if (dateInput.value = "") {
+        dateInput.placeholder = "Due..."
+    } else {
+        dateInput.value = info.date;
     };
 }

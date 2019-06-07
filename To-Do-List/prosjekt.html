@@ -100,10 +100,12 @@
             </textarea>
             <p id="taskMembers">Assign to:</p>
             <div class="form-group">
-                <input id="memberInput" type="text" required="required" />
+                <input id="memberInput" type="text" required="required"/>
                 <a id="memberButton" href="#">Add member</a>
                 <p id="members"></p>
             </div>
+            <p id="taskDate">Due date:</p>
+            <input id="dateInput" type="text" placeholder="Due..." required="required"/>
             <button type="button" class="btn" id="saveBtn">Save task</button>
             <button type="button" class="btn cancel" id="cancelBtn" onclick="toggleForm('none')">Close</button>
         </form>
