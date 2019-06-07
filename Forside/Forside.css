@@ -3,21 +3,24 @@
 }
 
 body {
+  padding: 0;
+  margin: 0;
   background: linear-gradient(to right, #9796f0, #fbc7d4);
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+main {
   height: 100vh;
+  text-align: center;
 }
 
 .howBox {
+  padding: 10px;
+  margin: 100px 0 auto;
   display: inline-block;
-  text-align: center;
-  box-sizing: border-box;
-  margin-top: 100px;
-}
-
-#howBoxes {
-  display: grid;
-  grid-template-columns: auto auto auto;
-
+  box-sizing: content-box;
+  vertical-align: top;
 }
 
 .howHeadline{
