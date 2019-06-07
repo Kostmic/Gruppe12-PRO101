@@ -31,6 +31,8 @@
 
 /* Set style for Create event button */
 .form-container .btn {
+  box-shadow: -1px 5px 12px -3px #000000;
+  border-radius: 8px;
   background-color: #5D4954;
   color: white;
   padding: 16px 20px;
@@ -43,6 +45,8 @@
 
 /* Make cancel button red */
 .form-container .cancel {
+  box-shadow: -1px 5px 12px -3px #000000;
+  border-radius: 8px;
   background-color: red;
 }
 

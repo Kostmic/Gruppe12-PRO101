@@ -3,36 +3,36 @@
 }
 
 body {
+  padding: 0;
+  margin: 0;
   background: linear-gradient(to right, #9796f0, #fbc7d4);
-  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  height: 90vh;
+  text-align: center;
 }
 
 .howBox {
+  padding: 10px;
+  margin: 100px 0 auto;
   display: inline-block;
-  text-align: center;
-  box-sizing: border-box;
-  margin-top: 100px;
-}
-
-#howBoxes {
-  justify-items: center;
-  display: grid;
-  grid-template-columns: auto auto auto;
-
+  box-sizing: content-box;
+  vertical-align: top;
 }
 
 .howHeadline{
-  width: 435px;
-  font-size: 25px;
+  width: 350px;
+  font-size: 15px;
 }
 
 .howBoxText{
-  width: 435px;
-  font-size: 30px;
+  width: 350px;
+  font-size: 15px;
 }
 
 img {
-  height: 335px;
-  width: 435px;
+  width: 350px;
   top: 100px;
 }

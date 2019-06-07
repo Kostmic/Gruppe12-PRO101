@@ -83,5 +83,3 @@ function assignEvent() {
     alert("Invalid date. Format is YYYY-MM-DD.");
   }
 };
-
-var select = document.getElementById('selectRoom');
