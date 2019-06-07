@@ -50,19 +50,16 @@
 
   <div id="calendar"></div>
 
+<!--Form for user input fields-->
   <div class="form-popup" id="myForm">
     <form class="form-container">
       <h1>Create event</h1>
-
       <label for="Title"><b>Title</b></label>
       <input type="text" placeholder="Enter title" id="userTitle">
-
       <label for="Start"><b>StartDate (YYYY-MM-DD)</b></label>
       <input type="text" placeholder="Enter StartDate" id="userDate">
-
       <label for="Room"><b>Room</b></label>
       <input type="text" placeholder="Enter room nr" id="userRoom">
-
       <button type="button" class="btn" id="createBtn">Create event</button>
       <button type="button" class="btn cancel" id="cancelBtn" onclick="toggleForm('none')">Close</button>
     </form>

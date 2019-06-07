@@ -24,17 +24,17 @@ main {
 }
 
 .howHeadline{
-  width: 500px;
+  width: 440px;
   font-size: 25px;
 }
 
 .howBoxText{
-  width: 500px;
+  width: 440px;
   font-size: 30px;
 }
 
 img {
-  height: 400px;
-  width: 500px;
+  height: 340px;
+  width: 440px;
   top: 100px;
 }
